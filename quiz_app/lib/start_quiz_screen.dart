@@ -32,20 +32,28 @@ class StartQuiz extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: foregroundColor,
-              ),
-                onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const PlayQuiz()));
-                },
-                child: const Text(
-                  'Start',
-                  style: TextStyle(
-                    color: foregroundColor,
-                    fontWeight: FontWeight.bold,
+            SizedBox(
+              height: 50,
+              width: 100,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  elevation: 3,
+                  primary: foregroundColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+                  onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const PlayQuiz()));
+                  },
+                  child: const Text(
+                    'Start',
+                    style: TextStyle(
+                      color: foregroundColor,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+              ),
             ),
           ],
         ),

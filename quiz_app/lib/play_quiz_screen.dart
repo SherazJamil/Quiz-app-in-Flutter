@@ -1,8 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:quiz_app/const.dart';
 import 'package:quiz_app/questions_model.dart';
+import 'package:quiz_app/score_screen.dart';
 
 class PlayQuiz extends StatefulWidget {
   const PlayQuiz({Key? key}) : super(key: key);
@@ -119,7 +118,10 @@ class _PlayQuizState extends State<PlayQuiz> {
             if (currentIndex != quizQuestions.length) {
               pageController.jumpToPage(currentIndex);
             } else {
-
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Score(
+                correctAnswers: correctAnswers,
+                wrongAnswers: wrongAnswers,
+              )));
             }
           }
           else {
