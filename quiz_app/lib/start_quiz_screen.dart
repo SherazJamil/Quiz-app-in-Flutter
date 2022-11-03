@@ -14,6 +14,7 @@ class StartQuiz extends StatelessWidget {
         title: const Text(
           'Start Quiz',
           style: TextStyle(
+            color: backgroundColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -34,7 +35,7 @@ class StartQuiz extends StatelessWidget {
             ),
             SizedBox(
               height: 50,
-              width: 100,
+              width: 200,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 3,
@@ -49,7 +50,8 @@ class StartQuiz extends StatelessWidget {
                   child: const Text(
                     'Start',
                     style: TextStyle(
-                      color: foregroundColor,
+                      fontSize: 20,
+                      color: backgroundColor,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

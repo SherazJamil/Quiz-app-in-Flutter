@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'questions_model.dart';
 
-const backgroundColor = Color.fromRGBO(44, 35, 8, 1);
-const foregroundColor = Color.fromRGBO(240, 135, 10, 1);
+const backgroundColor = Color(0xFF1D1D35);
+const foregroundColor = Color(0xFF00BF6D);
 
 List<QuizQuestionModel> quizQuestions = [
   QuizQuestionModel(
@@ -88,7 +88,7 @@ List<QuizQuestionModel> quizQuestions = [
       ]),
   QuizQuestionModel(
       questions: "10. Dart language can be compiled" ,
-      correctAnswer: "Google",
+      correctAnswer: "Both AOT & JIT",
       options: [
         "AOT",
         "JIT",

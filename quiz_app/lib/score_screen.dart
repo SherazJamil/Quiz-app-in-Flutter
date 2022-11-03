@@ -14,15 +14,8 @@ class Score extends StatelessWidget {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: foregroundColor,
-        leading: IconButton(
-          onPressed: (){
-            Navigator. pop(context);
-          },
-          icon: const Icon(
-            Icons. arrow_back_ios,
-            color: backgroundColor,
-          ),
-        ),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
         title: const Text(
           'Score',
           style: TextStyle(
@@ -45,7 +38,7 @@ class Score extends StatelessWidget {
             ),
             SizedBox(
               height: 50,
-              width: 100,
+              width: 200,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   elevation: 3,
@@ -60,7 +53,8 @@ class Score extends StatelessWidget {
                 child: const Text(
                   'Start Again',
                   style: TextStyle(
-                    color: foregroundColor,
+                    fontSize: 20,
+                    color: backgroundColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

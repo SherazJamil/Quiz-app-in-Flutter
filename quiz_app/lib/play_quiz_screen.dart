@@ -22,16 +22,9 @@ class _PlayQuizState extends State<PlayQuiz> {
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
+        centerTitle: true,
+        automaticallyImplyLeading: false,
         backgroundColor: foregroundColor,
-        leading: IconButton(
-          onPressed: (){
-            Navigator. pop(context);
-            },
-          icon: const Icon(
-              Icons. arrow_back_ios,
-            color: backgroundColor,
-          ),
-        ),
         title: const Text(
           'Play Quiz',
           style: TextStyle(
@@ -84,12 +77,11 @@ class _PlayQuizState extends State<PlayQuiz> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: foregroundColor,
+                          color: selectedAnswer == model.options[index] ? foregroundColor : backgroundColor,
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       alignment: Alignment.centerLeft,
-                      color: selectedAnswer == model.options[index] ? foregroundColor : backgroundColor,
                       padding: const EdgeInsets.all(10),
                       child: Text(
                         model.options[index],
@@ -117,11 +109,13 @@ class _PlayQuizState extends State<PlayQuiz> {
             currentIndex++;
             if (currentIndex != quizQuestions.length) {
               pageController.jumpToPage(currentIndex);
+              isAnswered = false;
             } else {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Score(
                 correctAnswers: correctAnswers,
                 wrongAnswers: wrongAnswers,
               )));
+
             }
           }
           else {
@@ -129,11 +123,11 @@ class _PlayQuizState extends State<PlayQuiz> {
               shape: StadiumBorder(),
               duration: Duration(milliseconds: 2000),
               behavior: SnackBarBehavior.floating,
-              backgroundColor: backgroundColor,
+              backgroundColor: foregroundColor,
                 content: Text(
                     'Please select your answer',
                   style: TextStyle(
-                    color: foregroundColor,
+                    color: backgroundColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
                   ),
